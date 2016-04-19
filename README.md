@@ -10,5 +10,6 @@
 4、工程目录右键，选择Git Bash
 
 	
-	执行命令：npm install request
-	执行命令：node proxy
+	执行命令：npm install gulpjs/gulp#4.0 -g安装gulp到全局
+	执行命令：npm install 安装配置环境到本地
+	执行命令：gulp
