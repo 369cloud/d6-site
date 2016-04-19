@@ -1,0 +1,187 @@
+<article class="component" id="list" data-url='list'>
+  <h2 class="component-title">常用列表</h2>
+  <p class="component-description">常在iOS应用中看到的列表，是种多功能且强大的交互组件。列表将数据展现在一个可滚动的多行的列表中。</p>
+  <p class="component-description">列表有以下用途：</p>
+  <ul>
+    <li>让用户可以浏览结构化的多级数据</li>
+    <li>展现一个索引列表</li>
+    <li>在可视化的不同分组中，显示详细信息和控件</li>
+    <li>展现一个可以选择的列表</li>
+  </ul>
+  {% highlight html %}
+  <div class="ui-list-block">
+    <ul>
+      <li>
+        <div class="ui-list-item-content ui-list-item-link ">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title-row">名称</div>
+            <div class="ui-list-item-after">你的iPhone</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="ui-list-block">
+    <ul>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">网络</div>
+            <div class="ui-list-item-after">中国移动</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">歌曲</div>
+            <div class="ui-list-item-after">0</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">视频</div>
+            <div class="ui-list-item-after">0</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">照片</div>
+            <div class="ui-list-item-after">229</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">应用程序</div>
+            <div class="ui-list-item-after">132</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">总容量</div>
+            <div class="ui-list-item-after">55.9G</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">可用容量</div>
+            <div class="ui-list-item-after">32.9G</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">版本</div>
+            <div class="ui-list-item-after">8.4(12H143)</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">运营商</div>
+            <div class="ui-list-item-after">中国移动20.0</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">型号</div>
+            <div class="ui-list-item-after">MG4H2CH/A</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-link ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">SEID</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="ui-list-block">
+    <ul>
+      <li>
+        <div class="ui-list-item-link ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">法律信息</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-content">
+          <div class="ui-list-item-link ui-list-item-content">
+            <div class="ui-list-item-inner">
+              <div class="ui-list-item-title-row">
+                <div class="ui-list-item-title">更多</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  {% endhighlight %}
+  <p class="component-description">样式说明</p>
+  <ul>
+    <li>
+      <code>ui-list-block</code>
+      - 列表组件的顶层标示。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-list-item-content</code>
+      - 列表项的主要弹性(flex)容器。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-list-item-link</code>
+      - 需要该项有点击效果的时候，在该项最外层添加该样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-list-item-inner</code>
+      -
+      <code>ui-list-item-title</code>
+      和
+      <code>ui-list-item-after</code>
+      的主要弹性(flex)容器。
+      <strong>必选</strong>
+      元素。
+    </li>
+
+    <li>
+      <code>ui-list-item-title</code>
+      - 单行列表项目标题。
+      <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-list-item-title</code>
+      - 单行列表项目标题，帶箭頭。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-list-item-after</code>
+      - 列表项目标签。可以包含任意额外的html元素（例如标签文本、徽章、switch/toggle、按钮等等）。
+      <strong>可选</strong>
+      元素。
+    </li>
+  </ul>
+
+</article>

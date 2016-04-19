@@ -1,0 +1,349 @@
+<article class="component" id="swipelist" data-url='swipelist'>
+  <h3 class="component-title">滑动删除列表（Swipe List View）</h3>
+  滑动删除列表是列表（list view）的扩展，它是为了实现更复杂的数据操作。
+当然，它的布局更为复杂：
+{% highlight html %}
+  <div class="ui-list-block">
+    <ul>
+      <li class="ui-swipeout">
+        <div class="ui-list-item-content ui-swipeout-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">左滑显示删除按钮</div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-right">
+          <span class="ui-swipeout-delete">删除</span>
+        </div>
+      </li>
+      <li class="ui-swipeout">
+        <div class="ui-list-item-content ui-swipeout-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">右滑显示删除按钮</div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-left">
+          <span class="ui-swipeout-delete">删除</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ui-list-block ui-media-list">
+    <ul>
+      <li class="ui-swipeout">
+        <div class="ui-swipeout-content">
+          <div class="ui-list-item-link ui-list-item-content">
+            <div class="ui-list-item-inner">
+              <div class="ui-list-item-title-row">
+                <div class="ui-list-item-title">左滑显示删除按钮</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-right">
+          <span class="ui-swipeout-delete">Delete</span>
+        </div>
+      </li>
+
+      <li class="ui-swipeout">
+        <div class="ui-swipeout-content">
+          <div class="ui-list-item-link ui-list-item-content">
+            <div class="ui-list-item-inner">
+              <div class="ui-list-item-title-row">
+                <div class="ui-list-item-title">右滑显示删除按钮</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-left">
+          <span class="ui-swipeout-delete">删除</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="ui-list-block">
+    <ul>
+      <li class="ui-swipeout">
+        <div class="ui-list-item-content ui-swipeout-content">
+          <div class="ui-item-media">
+            <img class="ui-media-inset" src="../img/9.jpg"></div>
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">右滑显示按钮</div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-left">
+          <span class="ui-bg-green">Reply</span>
+          <span  class="ui-bg-blue">Forward</span>
+        </div>
+      </li>
+      <li class="ui-swipeout">
+        <div class="ui-list-item-content ui-swipeout-content">
+          <div class="ui-item-media">
+            <img class="ui-media-inset" src="../img/7.jpg"></div>
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">左滑显示按钮</div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-right">
+          <span class="ui-bg-green">Reply</span>
+          <span  class="ui-bg-blue">Forward</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="ui-list-block ui-media-list">
+    <ul>
+      <li class="ui-swipeout">
+        <div class="ui-swipeout-content">
+          <div class="ui-list-item-content ui-list-item-link">
+            <div class="ui-item-media">
+              <img class="ui-media-inset" src="../img/6.jpg"></div>
+            <div class="ui-list-item-inner">
+              <div class="ui-list-item-title">左滑显示按钮</div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-right">
+          <span class="ui-bg-green">Reply</span>
+          <span  class="ui-bg-blue">Forward</span>
+        </div>
+      </li>
+
+      <li class="ui-swipeout">
+        <div class="ui-swipeout-content">
+          <div class="ui-list-item-content ui-list-item-link">
+            <div class="ui-item-media">
+              <img class="ui-media-inset" src="../img/5.jpg"></div>
+            <div class="ui-list-item-inner">
+              <div class="ui-list-item-title">右滑显示按钮</div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-left">
+          <span class="ui-bg-green">Reply</span>
+          <span  class="ui-bg-blue">Forward</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ui-list-block ui-media-list">
+    <ul>
+      <li class="ui-swipeout">
+        <div class="ui-swipeout-content">
+          <div class="ui-list-item-link ui-list-item-content">
+            <div class="ui-list-item-inner">
+              <div class="ui-list-item-title-row">
+                <div class="ui-list-item-title">计费通知</div>
+                <div class="ui-list-item-after">17:14</div>
+              </div>
+              <div class="ui-media-item-subtitle">您支付了7元</div>
+              <div class="ui-media-item-text">
+                您2015-05-17 21:09:49的用车服务已完成，行驶10.00分钟3.70公里，原价10.00元，使用优惠券3.00元，应付7.00元，2小时后系统将自动从您的信用卡中扣款，账户有余额时优先扣除余额。
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-left">
+          <span class="ui-bg-green ui-swipeout-overswipe">Reply</span>
+          <span class="ui-bg-blue">Forward</span>
+        </div>
+        <div class="ui-swipeout-actions-right">
+          <span>More</span>
+          <span class="ui-bg-orange">Mark</span>
+          <span class="ui-swipeout-delete ui-swipeout-overswipe">Delete</span>
+        </div>
+      </li>
+      <li class="ui-swipeout">
+        <div class="ui-swipeout-content">
+          <div class="ui-list-item-link ui-list-item-content">
+            <div class="ui-list-item-inner">
+              <div class="ui-list-item-title-row">
+                <div class="ui-list-item-title">计费通知</div>
+                <div class="ui-list-item-after">17:14</div>
+              </div>
+              <div class="ui-media-item-subtitle">您支付了7元</div>
+              <div class="ui-media-item-text">
+                您2015-05-17 21:09:49的用车服务已完成，行驶10.00分钟3.70公里，原价10.00元，使用优惠券3.00元，应付7.00元，2小时后系统将自动从您的信用卡中扣款，账户有余额时优先扣除余额。
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-left">
+          <span class="ui-bg-green ui-swipeout-overswipe">Reply</span>
+          <span class="ui-bg-blue">Forward</span>
+        </div>
+        <div class="ui-swipeout-actions-right">
+          <span>More</span>
+          <span class="ui-bg-orange">Mark</span>
+          <span class="ui-swipeout-delete ui-swipeout-overswipe">Delete</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ui-list-block ui-media-list">
+    <ul>
+      <li class="ui-swipeout">
+        <div class="ui-swipeout-content">
+          <div class="ui-list-item-content">
+            <div class="ui-list-item-inner">
+              <div class="ui-list-item-title-row">
+                <div class="ui-list-item-title">计费通知</div>
+                <div class="ui-list-item-after">17:14</div>
+              </div>
+              <div class="ui-media-item-subtitle">您支付了7元</div>
+              <div class="ui-media-item-text">
+                您2015-05-17 21:09:49的用车服务已完成，行驶10.00分钟3.70公里，原价10.00元，使用优惠券3.00元，应付7.00元，2小时后系统将自动从您的信用卡中扣款，账户有余额时优先扣除余额。
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-left">
+          <span class="ui-bg-green ui-swipeout-overswipe">Reply</span>
+          <span class="ui-bg-blue">Forward</span>
+        </div>
+        <div class="ui-swipeout-actions-right">
+          <span>More</span>
+          <span class="ui-bg-orange">Mark</span>
+          <span class="ui-swipeout-delete ui-swipeout-overswipe">Delete</span>
+        </div>
+      </li>
+      <li class="ui-swipeout">
+        <div class="ui-swipeout-content">
+          <div class="ui-list-item-content">
+            <div class="ui-list-item-inner">
+              <div class="ui-list-item-title-row">
+                <div class="ui-list-item-title">计费通知</div>
+                <div class="ui-list-item-after">17:14</div>
+              </div>
+              <div class="ui-media-item-subtitle">您支付了7元</div>
+              <div class="ui-media-item-text">
+                您2015-05-17 21:09:49的用车服务已完成，行驶10.00分钟3.70公里，原价10.00元，使用优惠券3.00元，应付7.00元，2小时后系统将自动从您的信用卡中扣款，账户有余额时优先扣除余额。
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-swipeout-actions-left">
+          <span class="ui-bg-green">Reply</span>
+          <span class="ui-bg-blue">Forward</span>
+        </div>
+        <div class="ui-swipeout-actions-right ">
+          <span >More</span>
+          <span class="ui-bg-orange">Mark</span>
+          <span class="ui-swipeout-delete ui-swipeout-overswipe">Delete</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  {% endhighlight %}
+
+  <h3 class="component-title">JS 部分</h3>
+    
+  {% highlight html %}
+      domReady(function(require){
+        $('.ui-swipeout').swipelist();
+      });
+  {% endhighlight %}
+  <p class="component-description">样式说明</p>
+  <ul>
+    <li>
+      <code>ui-swipeout</code>
+      - 滑动列表组件标示。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-swipeout-content</code>
+      - 滑动列表项内容样式。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-swipeout-actions-right</code>
+      - 滑动列表右侧可滑动样式标示
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-swipeout-actions-left</code>
+      - 滑动列表左侧可滑动样式标示。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-swipeout-delete</code>
+      - 删除按钮样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+
+    <li>
+      <code>ui-bg-orange</code>
+      - 橙色背景样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-bg-blue</code>
+      - 蓝色背景样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-bg-green</code>
+      - 绿色背景样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+  </ul>
+
+
+  <h3 class="component-title">事件</h3>
+  <p class="component-description">在操作过程中可以通过以下事件来控制滑动删除的操作。</p>
+
+  <table>
+    <tr>
+      <th>事件</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>pageLoadStart</td>
+      <td>发送Ajax之前触发</td>
+    </tr>
+    <tr>
+      <td>pageLoadCancel</td>
+      <td>取消了正在发送的ajax请求</td>
+    </tr>
+    <tr>
+      <td>pageLoadError</td>
+      <td>Ajax 请求失败</td>
+    </tr>
+    <tr>
+      <td>pageLoadComplete</td>
+      <td>Ajax 请求结束，无论是成功还是失败</td>
+    </tr>
+    <tr>
+      <td>pageAnimationStart</td>
+      <td>新页面的DOM插入当前页面之后，动画执行之前</td>
+    </tr>
+    <tr>
+      <td>pageAnimationEnd</td>
+      <td>新页面动画执行完毕</td>
+    </tr>
+    <tr>
+      <td>beforePageRemove</td>
+      <td>加载新的页面，动画切换完成后，移除旧的 document 前发送，事件回调函数参数是<code>event, $pageContainer</code>，其中<code>$pageContainer</code> 是 <code>.page-group</code>（注：在 window 上触发，且内联 page 的切换不会触发此事件）</td>
+    </tr>
+      <tr>
+          <td>pageRemoved</td>
+          <td>加载新的页面，动画切换完成后，移除旧的 document 后发送（注：在 window 上触发，且内联 page 的切换不会触发此事件）</td>
+      </tr>
+      <tr>
+          <td>beforePageSwitch</td>
+          <td>page 切换前触发，该事件在 pageAnimationStart 前，beforePageSwitch 之后会做一些额外的处理才触发 pageAnimationStart</td>
+      </tr>
+    <tr>
+      <td>pageInit</td>
+      <td>新页面中的组件初始化完毕</td>
+    </tr>
+  </table>
+</article>

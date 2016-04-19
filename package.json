@@ -1,0 +1,8 @@
+{
+  "author": "jack",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-open": "^0.3.2"
+  }
+}

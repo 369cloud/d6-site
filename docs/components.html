@@ -1,0 +1,33 @@
+---
+layout: docL
+---
+
+<div class="doc-container">
+  <!-- Components -->
+  <div class="docs-components column-group">
+    {% include jump.html %}
+    <div class="device-column column pull-right">
+      <!-- In phone examples -->
+      <div class="device js-device">
+        <div class="device-content">
+          <div id="iwindow">
+            <header class="bar bar-nav">
+              <h1 class="title">示例</h1>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column docs-content docs-column">
+      <!-- Bars -->
+  {% include _components/list.html %}
+  {% include _components/customlist.html %}
+  {% include _components/medialist.html %}
+  {% include _components/swipelist.html %}
+  {% include _components/accordionlist.html %}
+      <!-- Footer -->
+      {% include docf.html %}
+    </div>
+  </div>
+</div>

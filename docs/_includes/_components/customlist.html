@@ -1,0 +1,95 @@
+<article class="component" id="customlist" data-url='customlist'>
+
+  <h3 class="component-title">自定义列表（Custom List View）</h3>
+  自定义列表满足了个性化的列表需求
+
+{% highlight html %}
+  <div class="ui-list-block">
+    <ul>
+      <li>
+        <div class="ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">item</div>
+            <div class="ui-list-item-after">
+              <div class="ui-switch ui-active">
+                <div class="ui-switch-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-link ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">item</div>
+            <div class="ui-list-item-after">你的iPhone</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-link ui-list-item-content">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">item</div>
+            <div class="ui-list-item-after">
+              <span class="ui-badge ui-badge-red">15</span>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-list-item-link ui-list-item-content ui-list-button">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title">item</div>
+            <div class="ui-list-item-after"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  {% endhighlight %}
+  <p class="component-description">样式说明</p>
+  <ul>
+    <li>
+      <code>ui-switch</code>
+      - switch组件标示。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-active</code>
+      - switch组件默认开启标示。 <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-switch-handle</code>
+      - switch组件滑动按钮样式
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-badge</code>
+      - 标记样式。
+      <strong>必选</strong>
+      元素。
+    </li>
+
+    <li>
+      <code>ui-badge-red</code>
+      - 标记颜色样式（紅色）。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-btn</code>
+      - 按钮样式。
+      <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-btn-blue</code>
+      - 按钮颜色样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+  </ul>
+
+</article>
