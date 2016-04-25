@@ -1,0 +1,31 @@
+---
+layout: docs-demos
+title: D6 Demo
+---
+  <div class="ui-slider">
+    <div class="ui-slider-group">
+      <div class="ui-slider-item">
+        <img class="ui-slider-img" src="../img/1.png"></div>
+      <div class="ui-slider-item">
+        <img class="ui-slider-img" src="../img/2.png"></div>
+      <div class="ui-slider-item">
+        <img class="ui-slider-img" src="../img/3.png"></div>
+      <div class="ui-slider-item">
+        <img class="ui-slider-img" src="../img/4.png"></div>
+    </div>
+  </div>
+<script>
+
+  domReady(function(require){
+    $('.ui-slider').slider({ 
+            autoPlay:true,
+            loop:true,
+            dots:true,
+            gestur:true,
+            interval:1000,
+            guide:true,
+            mulViewNum:1,
+            fullPage:true
+        });
+  });
+</script>

@@ -1,0 +1,139 @@
+<article class="component" id="input" data-url='input'>
+  <h2 class="component-title">文本框</h2>
+  {% highlight html %}
+  普通输入框：
+  <div class="ui-input-group">
+    <div class="ui-input-row">
+      <label>text</label>
+      <input type="text" required="required" placeholder="text"></div>
+  </div>
+  带清除按钮的输入框：
+  <div class="ui-input-group">
+    <div class="ui-input-row">
+      <label>清除按钮</label>
+      <input type="text" class="ui-input-clear" placeholder="带清除按钮的输入框"></div>
+  </div>
+  语音输入输入框：
+  <div class="ui-input-group">
+    <div class="ui-input-row">
+      <label>语音输入</label>
+      <input type="text" class="ui-input-speech ui-input-clear" placeholder="语音输入">
+      <span class="ui-icon ui-icon-speech"></span>
+    </div>
+  </div>
+  搜索框：
+  <div class="ui-input-row ui-search">
+    <input type="search" class="ui-input-clear" placeholder=""></div>
+  语音输入搜索框：
+  <div class="ui-input-row ui-search">
+    <input type="search" class="ui-input-speech ui-input-clear" placeholder="带语音输入的搜索框">
+    <span class="ui-icon ui-icon-speech"></span>
+  </div>
+  下拉：
+  <div class="ui-input-group">
+    <div class="ui-input-row">
+      <label>请选择</label>
+      <select>
+        <option value=0>选项一</option>
+        <option value=1>选项二</option>
+        <option value=2>选项三</option>
+        <option value=3>选项四</option>
+      </select>
+    </div>
+  </div>
+  多选框：
+  <div class="ui-input-group">
+    <div class="ui-input-row ui-checkbox ui-left">
+      <label>left checkbox</label>
+      <input name="checkbox" type="checkbox" value="0"></div>
+    <div class="ui-input-row ui-checkbox">
+      <label>right checkbox</label>
+      <input name="checkbox1" type="checkbox" checked></div>
+    <div id="discheck" class="ui-input-row ui-checkbox ui-left">
+      <label>disabled checkbox</label>
+      <input name="checkbox" type="checkbox" value="2" disabled="disabled"></div>
+  </div>
+  单选框：
+  <div class="ui-input-group">
+    <div class="ui-input-row ui-radio ui-left" >
+      <label>radio</label>
+      <input name="radio1" type="radio" value="0"></div>
+    <div class="ui-input-row ui-radio">
+      <label>radio</label>
+      <input  name="radio1" type="radio" value="1" checked></div>
+    <div class="ui-input-row ui-radio ui-left" >
+      <label>disabled radio</label>
+      <input name="radio1" type="radio" value="2" disabled="disabled"></div>
+  </div>
+  card-input
+  <div class="ui-card">
+    <div class="ui-input-group">
+      <div class="ui-input-row">
+        <label>普通</label>
+        <input type="email" required="required" placeholder="email"></div>
+    </div>
+  </div>
+  账户、密码
+  <div class="ui-group-card">
+    <div class="ui-input-row">
+      <input type="text" class="ui-input-clear ui-input" placeholder="账号"></div>
+    <div class="ui-input-row">
+      <input type="password" class="ui-input-clear ui-input" placeholder="密码"></div>
+  </div>
+  文本域
+  <div class="ui-input-row ui-input-textarea">
+    <textarea rows="5" placeholder="多行文本框"></textarea>
+  </div>
+  {% endhighlight %}
+  <p class="component-description">样式说明</p>
+  <ul>
+    <li>
+      <code>ui-input-group</code>
+      - 输入框组件外层容器。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-input-row</code>
+      - 输入框组件行容器。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-input-clear</code>
+      - 清除图标样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-input-speech</code>
+      - 语音录入样式。
+      <strong>必选</strong>
+      元素。
+    </li>
+
+    <li>
+      <code>ui-icon ui-icon-speech</code>
+      - 语音录入图标样式。
+      <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-checkbox ui-left</code>
+      - 左侧多选框样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-radio ui-left</code>
+      - 左侧单选框样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-input-textarea</code>
+      - 文本域样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+  </ul>
+
+</article>

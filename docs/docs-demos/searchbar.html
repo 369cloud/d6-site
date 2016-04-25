@@ -1,0 +1,142 @@
+---
+layout: docs-demos
+title: D6 Demo
+---
+<div  class="ui-searchbar">
+  <form class="ui-searchbar-container">
+    <div class="ui-searchbar-input">
+      <input type="search"  placeholder="Search"/>
+    </div>
+  </form>
+  <div  class="ui-searchbar-content">
+    <div class="ui-list-block ui-searchbar-list">
+      <ul>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">北京</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item ui-searchbar-ignore">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">河北</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">辽宁</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">吉林</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">黑龙江</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">甘肃</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">内蒙古</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">山东</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">山西</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">河南</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">湖北</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">湖南</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">浙江</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">上海</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">重庆</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">广东</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">福建</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">西藏</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">新疆</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">四川</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">广西</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">江西</div>
+          </div>
+        </li>
+        <li class="ui-list-item-content ui-searchbar-item">
+          <div class="ui-list-item-inner">
+            <div class="ui-list-item-title ui-searchbar-key">陕西</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+domReady(function(require){
+  $('.ui-searchbar').searchbar({
+    cancel:'取消'
+  })
+  $('.ui-searchbar').on('search',function(e,query,foundItems){
+    console.log(query);
+  })
+});
+</script>

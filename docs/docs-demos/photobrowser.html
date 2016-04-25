@@ -1,0 +1,30 @@
+---
+layout: docs-demos
+title: D6 Demo
+---
+<div class="ui-photo-browser">
+  <div class="ui-photo-browser-container">
+    <div class="ui-slider-item">
+      <img class="ui-slider-img" src="../img/4.jpg"></div>
+    <div class="ui-slider-item">
+      <img class="ui-slider-img" src="../img/5.jpg"></div>
+    <div class="ui-slider-item">
+      <img class="ui-slider-img" src="../img/6.jpg"></div>
+    <div class="ui-slider-item">
+      <img class="ui-slider-img" src="../img/7.jpg"></div>
+  </div>
+</div>
+<script>
+
+  domReady(function(require){
+    $('.ui-photo-browser').photobrowser({
+          loop:true,
+          speed:400,
+          index:0,
+          gestur:true,
+          light:false,
+          space:0,
+          captions: ['描述1','描述2','描述3','描述4']
+    }).open()
+  });
+</script>

@@ -1,0 +1,35 @@
+---
+layout: docs-demos
+title: D6 Demo
+---
+    <div  class="ui-fullpage">
+            <div class="ui-fullpage-page ">
+                <img class = "ui-fullpage-pageinner" src="../img/5.jpg"></img>
+            </div>
+            <div class="ui-fullpage-page">
+                <img class = "ui-fullpage-pageinner" src="../img/6.jpg"></img>
+            </div>
+            <div class="ui-fullpage-page">
+                <img class = "ui-fullpage-pageinner" src="../img/7.jpg"></img>
+            </div>
+            <div class="ui-fullpage-page">
+                <img class = "ui-fullpage-pageinner" src="../img/8.jpg"></img>
+            </div>
+    </div>
+
+<script>
+
+  domReady(function(require){
+    var fp = $('.ui-fullpage').fullpage({
+        loop:true,
+        dots:true,
+        arrow:true,
+        gesture: false,
+        fullPage: true,
+        speed: 500
+    });
+    setInterval(function(){
+        fp.next();
+    },1000)
+  });
+</script>

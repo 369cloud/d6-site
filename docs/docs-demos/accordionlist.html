@@ -73,6 +73,19 @@ title: D6 Demo
 <script>
 
   domReady(function(require){
-    $('.ui-accordion-list').accordionList({});
+    $('.ui-accordion-list').accordionList({
+        toggleClose:true
+    });
+    $('.ui-accordion-list').on('tapped',function(e,el){
+        console.log('tapped')
+    }).on('open',function(e,el){
+        console.log('open')
+    }).on('opened',function(e,el){
+        console.log('opened')
+    }).on('close',function(e,el){
+        console.log('close')
+    }).on('closed',function(e,el){
+        console.log('closed')
+    })
   });
 </script>

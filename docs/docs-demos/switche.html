@@ -1,0 +1,118 @@
+---
+layout: docs-demos
+title: D6 Demo
+---
+  <header class="ui-nav-bar">
+        <div class="ui-nav-bar-inner">
+            <h1 class="ui-nav-bar-title">Switche</h1>
+        </div>
+    </header>
+    <div class='ui-list-block ui-content'>
+        <ul>
+            <li>
+                <div class="ui-list-item-content">
+                    <div class="ui-list-item-inner">
+                        <div class="ui-list-item-title">item</div>
+                        <div class="ui-list-item-after">
+                            <div class="ui-switch ui-active">
+                                <div class="ui-switch-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="ui-list-item-content">
+                    <div class="ui-list-item-inner">
+                        <div class="ui-list-item-title">item</div>
+                        <div class="ui-list-item-after">
+                            <div class="ui-switch">
+                                <div class="ui-switch-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="ui-list-item-content">
+                    <div class="ui-list-item-inner">
+                        <div class="ui-list-item-title">item</div>
+                        <div class="ui-list-item-after">
+                            <div class="ui-switch ui-switch-mini ui-active">
+                                <div class="ui-switch-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="ui-list-item-content">
+                    <div class="ui-list-item-inner">
+                        <div class="ui-list-item-title">item</div>
+                        <div class="ui-list-item-after">
+                            <div class="ui-switch ui-switch-mini">
+                                <div class="ui-switch-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="ui-list-item-content">
+                    <div class="ui-list-item-inner">
+                        <div class="ui-list-item-title">item</div>
+                        <div class="ui-list-item-after">
+                            <div class="ui-switch ui-switch-blue ui-active">
+                                <div class="ui-switch-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="ui-list-item-content">
+                    <div class="ui-list-item-inner">
+                        <div class="ui-list-item-title">item</div>
+                        <div class="ui-list-item-after">
+                            <div class="ui-switch ui-switch-blue">
+                                <div class="ui-switch-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="ui-list-item-content">
+                    <div class="ui-list-item-inner">
+                        <div class="ui-list-item-title">item</div>
+                        <div class="ui-list-item-after">
+                            <div class="ui-switch ui-switch-blue ui-switch-mini ui-active">
+                                <div class="ui-switch-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="ui-list-item-content">
+                    <div class="ui-list-item-inner">
+                        <div class="ui-list-item-title">item</div>
+                        <div class="ui-list-item-after">
+                            <div class="ui-switch ui-switch-blue ui-switch-mini">
+                                <div class="ui-switch-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+<script>
+
+  domReady(function(require) {
+        $('.ui-switch').switch();
+        $('.ui-switch').on('toggle', function(e,active) {
+            console.log(active);
+        })
+    });
+</script>

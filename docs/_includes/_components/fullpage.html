@@ -1,0 +1,176 @@
+<article class="component" id="fullpage" data-url='fullpage'>
+  <h3 class="component-title">滚屏（Fullpage）</h3>
+{% highlight html %}
+      <div  class="ui-fullpage">
+            <div class="ui-fullpage-page ">
+                <img class ="ui-fullpage-pageinner" src="../img/5.jpg"></img>
+            </div>
+            <div class="ui-fullpage-page">
+                <img class ="ui-fullpage-pageinner" src="../img/6.jpg"></img>
+            </div>
+            <div class="ui-fullpage-page">
+                <img class ="ui-fullpage-pageinner" src="../img/7.jpg"></img>
+            </div>
+            <div class="ui-fullpage-page">
+                <img class ="ui-fullpage-pageinner" src="../img/8.jpg"></img>
+            </div>
+      </div>
+  {% endhighlight %}
+
+  <h3 class="component-title">JS 部分</h3>
+    
+  {% highlight js %}
+      domReady(function(require){
+        $('.ui-fullpage').fullpage({
+            loop:true,
+            dots:true,
+            arrow:true,
+            gesture: false,
+            fullPage: true,
+            speed: 500
+        });
+      });
+  {% endhighlight %}
+
+  <p  class="component-description">通过fullpage方法返回一个或多个滚屏对象的数组（根据选择器选到的dom对象个数）</p>
+    
+  {% highlight js %}
+      var fp = $('.ui-fullpage').fullpage(); //单个 
+      var fps = $('.ui-fullpage').fullpage(); //数组
+  {% endhighlight %}
+
+  <p class="component-description">样式说明</p>
+  <ul>
+    <li>
+      <code>ui-fullpage</code>
+      - 滚屏组件标示。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-fullpage-page</code>
+      - 滚屏页样式
+      <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-fullpage-pageinner</code>
+      - 滚屏内容区域样式。
+      <strong>必选</strong>
+      元素。
+    </li>
+  </ul>
+
+  <h3 class="component-title">属性</h3>
+
+  <table>
+    <tr>
+      <th>属性</th>
+      <th>取值范围</th>
+      <th>默认值</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>loop</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>false</code></td>
+      <td>是否循环滚动</td>
+    </tr>
+    <tr>
+      <td>gesture</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>false</code></td>
+      <td>是否手势跟随</td>
+    </tr>
+    <tr>
+      <td>dots</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>false</code></td>
+      <td>是否显示滚动点</td>
+    </tr>
+    <tr>
+      <td>arrow</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>false</code></td>
+      <td>是否显示向上指示箭头</td>
+    </tr>
+    <tr>
+      <td>speed</td>
+      <td><code>Number（毫秒）</code></td>
+      <td><code>500</code></td>
+      <td>滚动动画的速度</td>
+    </tr>
+    <tr>
+      <td>fullPage</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>true</code></td>
+      <td>是否撑满整屏（取false时，默认以组件的父对象的高度为准）</td>
+    </tr>
+  </table>
+<h3 class="component-title">事件</h3>
+  <p class="component-description">在操作过程中可以通过以下事件来控制滚屏组件的操作。</p>
+
+  <table>
+    <tr>
+      <th>事件</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>beforeChange</td>
+     <td><code>event, cur, next</code>，其中<code>cur</code> 是当前页的下标，<code>next</code>是目标页的下标</td>
+      <td>将要改变显示页之前触发</td>
+    </tr>
+    <tr>
+      <td>change</td>
+      <td><code>event, cur, next</code>，其中<code>cur</code> 是当前页的下标，<code>next</code>是目标页的下标</td>
+      <td>发生改变显示页时触发</td>
+    </tr>
+    <tr>
+      <td>afterChange</td>
+      <td><code>event, cur</code>，其中<code>cur</code> 是当前页的下标</td>
+      <td>发生改变显示页后触发</td>
+    </tr>
+  </table>
+
+  <h3 class="component-title">方法</h3>
+  <p class="component-description">在操作过程中可以通过以下方法来控制滚屏组件的操作。</p>
+
+  <table>
+    <tr>
+      <th>方法</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>start</td>
+      <td><code>无</code></td>
+      <td>使滚屏对象可以滚动</td>
+    </tr>
+    <tr>
+      <td>stop</td>
+     <td><code>无</code></td>
+      <td>禁止滚屏对象滚动</td>
+    </tr>
+    <tr>
+      <td>moveTo</td>
+     <td><code>next</code>目标页的下标（从<code>0</code>开始）</td>
+      <td>移动到目标页</td>
+    </tr>
+    <tr>
+      <td>prev</td>
+     <td><code>无</code></td>
+      <td>移动到上一页</td>
+    </tr>
+    <tr>
+      <td>next</td>
+     <td><code>无</code></td>
+      <td>移动到下一页</td>
+    </tr>
+    <tr>
+      <td>getCurIndex</td>
+     <td><code>无</code></td>
+      <td>获取当前页的下标</td>
+    </tr>
+  </table>
+
+</article>

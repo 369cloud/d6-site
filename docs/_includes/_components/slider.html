@@ -1,0 +1,246 @@
+<article class="component" id="slider" data-url='slider'>
+  <h3 class="component-title">轮播图（Slider）</h3>
+  {% highlight html %}
+  <div class="ui-slider">
+    <div class="ui-slider-group">
+      <div class="ui-slider-item">
+        <img class="ui-slider-img" src="../img/1.png"></div>
+      <div class="ui-slider-item">
+        <img class="ui-slider-img" src="../img/2.png"></div>
+      <div class="ui-slider-item">
+        <img class="ui-slider-img" src="../img/3.png"></div>
+      <div class="ui-slider-item">
+        <img class="ui-slider-img" src="../img/4.png"></div>
+    </div>
+  </div>
+  {% endhighlight %}
+  <h3 class="component-title">JS 部分</h3>
+  {% highlight js %}
+    domReady(function(require){
+        $('.ui-slider').on('slide',function(e,index){
+           console.log(index);
+        }).on('moveend',function(e){
+           console.log('moveend');
+        }).slider({ 
+            autoPlay:true,
+            loop:true,
+            dots:true,
+            gestur:true,
+            guide:true,
+            mulViewNum:1,
+            fullPage:true
+        });
+    });
+  {% endhighlight %}
+
+  <p  class="component-description">通过slider方法返回一个或多个轮播图对象的数组（根据选择器选到的dom对象个数）</p>
+    
+  {% highlight js %}
+      var sl = $('.ui-slider').slider(); //单个 
+      var sls = $('.ui-slider').slider(); //数组
+  {% endhighlight %}
+
+
+  <p class="component-description">样式说明</p>
+  <ul>
+    <li>
+      <code>ui-slider</code>
+      - 轮播图组件标示。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-slider-group</code>
+      - 手轮播图容器对象样式
+      <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-slider-item</code>
+      - 轮播图对象样式。
+      <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-slider-img</code>
+      - 轮播图内容样式。
+      <strong>必选</strong>
+      元素。
+    </li>
+  </ul>
+
+  <h3 class="component-title">属性</h3>
+
+  <table>
+    <tr>
+      <th>属性</th>
+      <th>取值范围</th>
+      <th>默认值</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>loop</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>false</code></td>
+      <td>是否循环播放</td>
+    </tr>
+    <tr>
+      <td>speed</td>
+      <td><code>Number</code>（毫秒）</td>
+      <td><code>500</code></td>
+      <td>轮播图切换速度（毫秒）</td>
+    </tr>
+    <tr>
+      <td>index</td>
+      <td><code>Number</code></td>
+      <td><code>0</code></td>
+      <td>默认打开图片的下标</td>
+    </tr>
+    <tr>
+      <td>autoPlay</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>false</code></td>
+      <td>是否自动播放</td>
+    </tr>
+    <tr>
+      <td>interval</td>
+      <td><code>Number</code>（毫秒）</td>
+      <td><code>4000</code></td>
+      <td>自动播放的间隔时间（毫秒）</td>
+    </tr>
+    <tr>
+      <td>dots</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>false</code></td>
+      <td>是否显示轮播点</td>
+    </tr>
+    <tr>
+      <td>touch</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>true</code></td>
+      <td>是否支持触摸切换</td>
+    </tr>
+    <tr>
+      <td>mulViewNum</td>
+      <td><code>Number</code></td>
+      <td><code>1</code></td>
+      <td>一页显示的图片数量</td>
+    </tr>
+    <tr>
+      <td>space</td>
+      <td><code>Number</code></td>
+      <td><code>0</code></td>
+      <td>图片之间的间隔</td>
+    </tr>
+    <tr>
+      <td>fullPage</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>false</code></td>
+      <td>是否全屏显示</td>
+    </tr>
+    <tr>
+      <td>heightTarget</td>
+      <td><code>'self'</code>/<code>'img'</code>/<code>'parent'</code></td>
+      <td><code>self</code></td>
+      <td>当fullPage为false时，轮播图高度取决于自身（self）、图片（img）、父对象（parent）三者</td>
+    </tr>
+  </table>
+
+  <h3 class="component-title">事件</h3>
+  <p class="component-description">在操作过程中可以通过以下事件来控制轮播图的操作。</p>
+
+  <table>
+    <tr>
+      <th>事件</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>slide</td>
+      <td>
+        <code>event, to, from</code>
+        ，其中
+        <code>to</code>
+        目标图片的下标，
+        <code>from</code>
+        来源图片的下标
+      </td>
+      <td>图片切换时触发</td>
+    </tr>
+    <tr>
+      <td>slideend</td>
+      <td>
+        <code>event, index</code>
+        ，其中
+        <code>index</code>
+        是当前图片的下标
+      </td>
+      <td>执行上拉加载时触发</td>
+    </tr>
+    <tr>
+      <td>moveend</td>
+      <td>
+        <code>event, index, dir</code>
+        ，其中
+        <code>index</code>
+        是当前图片的下标，
+        <code>dir</code>
+        滑动方向（1为向右滑动到头，-1为向左滑动到头）
+      </td>
+      <td>当loop为false时，通过手势触摸滑动到尽头时触发</td>
+    </tr>
+  </table>
+
+  <h3 class="component-title">方法</h3>
+  <p class="component-description">在操作过程中可以通过以下方法来控制轮播图的操作。</p>
+
+  <table>
+    <tr>
+      <th>方法</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>play</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>使轮播图处于自动播放状态</td>
+    </tr>
+    <tr>
+      <td>stop</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>停止自动播放</td>
+    </tr>
+    <tr>
+      <td>next</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>切换到下一个</td>
+    </tr>
+    <tr>
+      <td>prev</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>切换到上一个</td>
+    </tr>
+    <tr>
+      <td>slideTo</td>
+      <td>
+        <code>to, [speed]</code>其中<code>to</code>为目标图片的下标，<code>speed</code>为切换速度（<code>可选</code>）
+      </td>
+      <td>切换到指定下标的图片</td>
+    </tr>
+    <tr>
+      <td>getIndex</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>获取当前显示图片的下标</td>
+    </tr>
+  </table>
+
+</article>

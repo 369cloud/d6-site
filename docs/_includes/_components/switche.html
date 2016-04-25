@@ -1,0 +1,127 @@
+<article class="component" id="switche" data-url='switche'>
+  <h3 class="component-title">开关（Switche）</h3>
+  {% highlight html %}
+  <div class="ui-switch ui-active">
+    <div class="ui-switch-handle"></div>
+  </div>
+
+  <div class="ui-switch">
+    <div class="ui-switch-handle"></div>
+  </div>
+
+  <div class="ui-switch ui-switch-mini ui-active">
+    <div class="ui-switch-handle"></div>
+  </div>
+
+  <div class="ui-switch ui-switch-mini">
+    <div class="ui-switch-handle"></div>
+  </div>
+
+  <div class="ui-switch ui-switch-blue ui-active">
+    <div class="ui-switch-handle"></div>
+  </div>
+
+  <div class="ui-switch ui-switch-blue">
+    <div class="ui-switch-handle"></div>
+  </div>
+
+  <div class="ui-switch ui-switch-blue ui-switch-mini ui-active">
+    <div class="ui-switch-handle"></div>
+  </div>
+
+  <div class="ui-switch ui-switch-blue ui-switch-mini">
+    <div class="ui-switch-handle"></div>
+  </div>
+  {% endhighlight %}
+  <h3 class="component-title">JS 部分</h3>
+  {% highlight js %}
+     domReady(function(require) {
+        $('.ui-switch').on('toggle', function(e,active) {
+            console.log(active);
+        }).switch();
+    });
+  {% endhighlight %}
+  <p  class="component-description">通过switch方法返回一个或多个开关对象的数组（根据选择器选到的dom对象个数）</p>
+  {% highlight js %}
+      var sw = $('.ui-switch').switch(); //单个 
+      var sws = $('.ui-switch').switch(); //数组
+  {% endhighlight %}
+  <p class="component-description">样式说明</p>
+  <ul>
+    <li>
+      <code>ui-switch</code>
+      - 开关组件标示。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-switch-handle</code>
+      - 开关按钮样式 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-active</code>
+      - 开关按钮默认打开样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-switch-mini</code>
+      - 小型开关组件样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-switch-blue</code>
+      - 开关组件蓝底色样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-switch-blue</code>
+      - 开关组件蓝底色样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+  </ul>
+
+
+  <h3 class="component-title">事件</h3>
+  <p class="component-description">在操作过程中可以通过以下事件来控制开关对象的操作。</p>
+
+  <table>
+    <tr>
+      <th>事件</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>toggle</td>
+      <td>
+        <code>event, active</code>
+        ，其中
+        <code>active</code>
+        开关的状态，true为打开，false为关闭
+      </td>
+      <td>开关切换时触发</td>
+    </tr>
+  </table>
+
+  <h3 class="component-title">方法</h3>
+  <p class="component-description">在操作过程中可以通过以下方法来控制轮播图的操作。</p>
+
+  <table>
+    <tr>
+      <th>方法</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>toggle</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>切换开关组件的状态</td>
+    </tr>
+  </table>
+
+</article>

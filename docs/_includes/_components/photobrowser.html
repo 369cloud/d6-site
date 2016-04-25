@@ -1,0 +1,150 @@
+<article class="component" id="photobrowser" data-url='photobrowser'>
+  <h3 class="component-title">图片浏览器（Photobrowser）</h3>
+{% highlight html %}
+  <div class="ui-photo-browser">
+  <div class="ui-photo-browser-container">
+    <div class="ui-slider-item">
+      <img class="ui-slider-img" src="../img/4.jpg"></div>
+    <div class="ui-slider-item">
+      <img class="ui-slider-img" src="../img/5.jpg"></div>
+    <div class="ui-slider-item">
+      <img class="ui-slider-img" src="../img/6.jpg"></div>
+    <div class="ui-slider-item">
+      <img class="ui-slider-img" src="../img/7.jpg"></div>
+  </div>
+</div>
+  {% endhighlight %}
+
+  <h3 class="component-title">JS 部分</h3>
+    
+  {% highlight js %}
+      domReady(function(require){
+         $('.ui-photo-browser').photobrowser({
+              loop:true,
+              speed:400,
+              index:0,
+              gestur:true,
+              light:false,
+              space:0,
+              captions: ['描述1','描述2','描述3','描述4']
+          }).open()
+      });
+  {% endhighlight %}
+
+  <p  class="component-description">通过photobrowser方法返回一个或多个图片浏览器对象的数组（根据选择器选到的dom对象个数）</p>
+    
+  {% highlight js %}
+      var pb = $('.ui-photo-browser').photobrowser(); //单个 
+      var pbs = $('.ui-photo-browser').photobrowser(); //数组
+  {% endhighlight %}
+
+  <p class="component-description">样式说明</p>
+  <ul>
+    <li>
+      <code>ui-photo-browser</code>
+      - 图片浏览器组件标示。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-photo-browser-container</code>
+      - 图片浏览器组件内容区域样式。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-slider-item</code>
+      - 图片内容项样式
+      <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-slider-img</code>
+      - 图片样式。
+      <strong>必选</strong>
+      元素。
+    </li>
+  </ul>
+
+  <h3 class="component-title">属性</h3>
+
+  <table>
+    <tr>
+      <th>属性</th>
+      <th>取值范围</th>
+      <th>默认值</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>loop</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>false</code></td>
+      <td>是否循环播放</td>
+    </tr>
+    <tr>
+      <td>speed</td>
+      <td><code>Number（毫秒）</code></td>
+      <td><code>400</code></td>
+      <td>滚动动画的速度</td>
+    </tr>
+    <tr>
+      <td>index</td>
+      <td><code>Number</code></td>
+      <td><code>0</code></td>
+      <td>默认显示的图片下标（从0开始）</td>
+    </tr>
+    <tr>
+      <td>captions</td>
+      <td><code>图片的描述（array）</code></td>
+      <td><code>无</code></td>
+      <td>针对每张图片的描述数组</td>
+    </tr>
+    <tr>
+      <td>light</td>
+      <td><code>true</code>/<code>false</code></td>
+      <td><code>false</code></td>
+      <td>是否采用白背景模式，默认为黑色系</td>
+    </tr>
+    <tr>
+      <td>space</td>
+      <td><code>Number</code></td>
+      <td><code>10</code></td>
+      <td>图片间的间隔</td>
+    </tr>
+  </table>
+
+
+  <h3 class="component-title">方法</h3>
+  <p class="component-description">在操作过程中可以通过以下方法来控制滑动删除的操作。</p>
+
+  <table>
+    <tr>
+      <th>方法</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>open</td>
+      <td><code>index</code><code>需要打开的图片下标</code></td>
+      <td>打开图片浏览器</td>
+    </tr>
+    <tr>
+      <td>moveTo</td>
+     <td><code>next</code><code>目标图片的下标</code></td>
+      <td>移动到指定下标的图片</td>
+    </tr>
+    <tr>
+      <td>prev</td>
+     <td><code>无</code></td>
+      <td>移动到上一张图片</td>
+    </tr>
+    <tr>
+      <td>next</td>
+     <td><code>无</code></td>
+      <td>移动到下一张图片</td>
+    </tr>
+    <tr>
+      <td>close</td>
+     <td><code>无</code></td>
+      <td>关闭图片浏览器</td>
+    </tr>
+  </table>
+</article>

@@ -1,0 +1,119 @@
+<article class="component" id="tabBar" data-url='tabBar'>
+  <h3 class="component-title">底部导航（TabBar）</h3>
+{% highlight html %}
+        <div class="ui-tab-bar">
+            <a class="ui-tab-item">
+                <span class="ui-icon ui-icon-phone"></span>
+                <span class="ui-tab-label">phone</span>
+            </a>
+            <a class="ui-tab-item">
+                <span class="ui-icon ui-icon-email"></span>
+                <span class="ui-tab-label">email</span>
+            </a>
+            <a class="ui-tab-item">
+                <span class="ui-icon ui-icon-chatbubble"></span>
+                <span class="ui-tab-label">message</span>
+            </a>
+            <a class="ui-tab-item">
+                <span class="ui-icon ui-icon-gear"></span>
+                <span class="ui-tab-label">install</span>
+            </a>
+        </div>
+  {% endhighlight %}
+
+  <h3 class="component-title">JS 部分</h3>
+  {% highlight js %}
+    domReady(function(require) {
+        $('.ui-tab-bar').on('activate', function(e, to, from) {
+            console.log(to)
+        }).tab()
+    });
+  {% endhighlight %}
+
+  <p class="component-description">样式说明</p>
+  <ul>
+    <li>
+      <code>ui-tab-bar</code>
+      - 底部导航组件标示。 <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-tab-item</code>
+      - 底部导航子元素样式
+      <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-icon ui-icon-email</code>
+      - 底部导航图标样式。
+      <strong>必选</strong>
+      元素。
+    </li>
+    <li>
+      <code>ui-tab-label</code>
+      - 底部导航描述样式。
+      <strong>可选</strong>
+      元素。
+    </li>
+  </ul>
+
+  <h3 class="component-title">属性</h3>
+
+  <table>
+    <tr>
+      <th>属性</th>
+      <th>取值范围</th>
+      <th>默认值</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>active</td>
+      <td><code>Number</code></td>
+      <td><code>0</code></td>
+      <td>初始选中下标（从0开始）</td>
+    </tr>
+  </table>
+
+  <h3 class="component-title">事件</h3>
+  <p class="component-description">在操作过程中可以通过以下事件来控制底部导航的操作。</p>
+
+  <table>
+    <tr>
+      <th>事件</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>activate</td>
+      <td>
+        <code>event, to, from</code>
+        ，其中
+        <code>to</code>
+        当前选中的下标，
+        <code>from</code>
+        来源的下标
+      </td>
+      <td>发生切换时触发</td>
+    </tr>
+  </table>
+
+  <h3 class="component-title">方法</h3>
+  <p class="component-description">在操作过程中可以通过以下方法来控制底部导航的操作。</p>
+
+  <table>
+    <tr>
+      <th>方法</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>switchTo</td>
+      <td>
+        <code>index</code>：目标的下标
+      </td>
+      <td>切换到目标项</td>
+    </tr>
+  </table>
+
+
+</article>

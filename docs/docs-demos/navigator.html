@@ -1,0 +1,62 @@
+---
+layout: docs-demos
+title: D6 Demo
+---
+<div class="ui-navigator">
+    <ul class="ui-navigator-list">
+        <li>
+            <a>首页</a>
+        </li>
+        <li>
+            <a>要闻</a>
+        </li>
+        <li>
+            <a>国内</a>
+        </li>
+        <li>
+            <a>国际</a>
+        </li>
+        <li>
+            <a>军事</a>
+        </li>
+        <li>
+            <a>社会</a>
+        </li>
+        <li>
+            <a>娱乐</a>
+        </li>
+        <li>
+            <a>女人</a>
+        </li>
+        <li>
+            <a>体育</a>
+        </li>
+        <li>
+            <a>科技</a>
+        </li>
+        <li>
+            <a>互联网</a>
+        </li>
+        <li>
+            <a>教育</a>
+        </li>
+        <li>
+            <a>财经</a>
+        </li>
+        <li>
+            <a>房产</a>
+        </li>
+        <li>
+            <a>汽车</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+
+    domReady(function(require){
+        $('.ui-navigator').on('switch',function(e,to,li){
+            console.log(to)
+        }).navigator();
+    })
+</script>

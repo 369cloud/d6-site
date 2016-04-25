@@ -1,0 +1,87 @@
+---
+layout: docs-demos
+title: D6 Demo
+---
+<style type="text/css">
+.ui-lazy-loader {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #efeff4;
+ }
+ .ui-lazy-loader-content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    padding: 10px 15px;
+ }
+ .ui-lazy-loader-content .ui-lazy,
+ .ui-lazy-loader-content .ui-lazy-loaded {
+    display: block;
+    width: 100%;
+    height: auto;
+   -webkit-animation: lazyFadeIn 600ms;
+   animation: lazyFadeIn 600ms;
+ }
+ p {
+  margin: 1em 0;
+}
+</style>
+<div class="ui-lazy-loader">
+  <div class="ui-lazy-loader-content">
+    <p>
+      <img data-src="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/peaceful_bamboo_grove.jpg" class="ui-lazy" />
+    </p>
+
+    <p>
+      <img data-src="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/peaceful_lake.jpg"  class="ui-lazy" />
+    </p>
+
+    <p>
+      <img data-src="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/quiet_rainforest.jpg"  class="ui-lazy" />
+    </p>
+
+    <p>
+      <img data-src="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/mossy_glade.jpg"  class="ui-lazy" />
+    </p>
+
+    <p>
+      <img data-src="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/quiet_zen_retreat.jpg"  class="ui-lazy" />
+    </p>
+
+    <p>
+      <img data-src="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/still_sunset.jpg"  class="ui-lazy" />
+    </p>
+
+    <p>
+      <img data-src="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/reading_a_book.jpg"  class="ui-lazy" />
+    </p>
+
+    <p>
+      <img data-src="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/zen_tranquility.jpg"  class="ui-lazy" />
+    </p>
+
+    <p>
+      <img data-src="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/calm_zen_garden.jpg"  class="ui-lazy" />
+    </p>
+
+    <p>
+      <img data-src="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/calm_ocean.jpg"  class="ui-lazy" />
+    </p>
+
+    <div style='height:300px;' data-background="http://www.freeimages.co.uk/galleries/sports/relaxation/thumbs/beach_walk.jpg" class="ui-lazy"></div>
+  </div>
+</div>
+<script>
+
+  domReady(function(require){
+        $('.ui-lazy-loader').lazyloadimage();
+    });
+</script>

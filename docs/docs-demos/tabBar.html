@@ -1,0 +1,36 @@
+---
+layout: docs-demos
+title: D6 Demo
+---
+<header class="ui-nav-bar">
+    <div class="ui-nav-bar-inner">
+        <h1 class="ui-nav-bar-title">TabBar</h1>
+    </div>
+</header>
+<div class="ui-tab-bar">
+    <a class="ui-tab-item">
+        <span class="ui-icon ui-icon-phone"></span>
+        <span class="ui-tab-label">phone</span>
+    </a>
+    <a class="ui-tab-item">
+        <span class="ui-icon ui-icon-email"></span>
+        <span class="ui-tab-label">email</span>
+    </a>
+    <a class="ui-tab-item">
+        <span class="ui-icon ui-icon-chatbubble"></span>
+        <span class="ui-tab-label">message</span>
+    </a>
+    <a class="ui-tab-item">
+        <span class="ui-icon ui-icon-gear"></span>
+        <span class="ui-tab-label">install</span>
+    </a>
+</div>
+
+<script>
+
+  domReady(function(require) {
+        $('.ui-tab-bar').on('activate', function(e, to, from) {
+            console.log(to)
+        }).tab()
+    });
+</script>

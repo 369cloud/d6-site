@@ -145,13 +145,13 @@
           </div>
         </div>
         <div class="ui-swipeout-actions-left">
-          <span class="ui-bg-green ui-swipeout-overswipe">Reply</span>
+          <span class="ui-bg-green ">Reply</span>
           <span class="ui-bg-blue">Forward</span>
         </div>
         <div class="ui-swipeout-actions-right">
           <span>More</span>
           <span class="ui-bg-orange">Mark</span>
-          <span class="ui-swipeout-delete ui-swipeout-overswipe">Delete</span>
+          <span class="ui-swipeout-delete">Delete</span>
         </div>
       </li>
       <li class="ui-swipeout">
@@ -170,13 +170,13 @@
           </div>
         </div>
         <div class="ui-swipeout-actions-left">
-          <span class="ui-bg-green ui-swipeout-overswipe">Reply</span>
+          <span class="ui-bg-green ">Reply</span>
           <span class="ui-bg-blue">Forward</span>
         </div>
         <div class="ui-swipeout-actions-right">
           <span>More</span>
           <span class="ui-bg-orange">Mark</span>
-          <span class="ui-swipeout-delete ui-swipeout-overswipe">Delete</span>
+          <span class="ui-swipeout-delete">Delete</span>
         </div>
       </li>
     </ul>
@@ -200,13 +200,13 @@
           </div>
         </div>
         <div class="ui-swipeout-actions-left">
-          <span class="ui-bg-green ui-swipeout-overswipe">Reply</span>
+          <span class="ui-bg-green ">Reply</span>
           <span class="ui-bg-blue">Forward</span>
         </div>
         <div class="ui-swipeout-actions-right">
           <span>More</span>
           <span class="ui-bg-orange">Mark</span>
-          <span class="ui-swipeout-delete ui-swipeout-overswipe">Delete</span>
+          <span class="ui-swipeout-delete">Delete</span>
         </div>
       </li>
       <li class="ui-swipeout">
@@ -225,13 +225,13 @@
           </div>
         </div>
         <div class="ui-swipeout-actions-left">
-          <span class="ui-bg-green">Reply</span>
+          <span class="ui-bg-green ">Reply</span>
           <span class="ui-bg-blue">Forward</span>
         </div>
         <div class="ui-swipeout-actions-right ">
           <span >More</span>
           <span class="ui-bg-orange">Mark</span>
-          <span class="ui-swipeout-delete ui-swipeout-overswipe">Delete</span>
+          <span class="ui-swipeout-delete">Delete</span>
         </div>
       </li>
     </ul>
@@ -240,11 +240,33 @@
 
   <h3 class="component-title">JS 部分</h3>
     
-  {% highlight html %}
+  {% highlight js %}
       domReady(function(require){
-        $('.ui-swipeout').swipelist();
+        $('.ui-swipeout').on('delete',function(e,sp){
+          return true;
+        }).on('open',function(e,sp){
+          console.log('open');
+        }).on('close',function(e,sp){
+          console.log('close');
+        }).on('opened',function(e,sp){
+          console.log('opened');
+        }).on('closed',function(e,sp){
+          console.log('closed');
+        }).on('deleted',function(e,sp){
+          console.log('deleted');
+        }).on('tapped',function(e,sp){
+          console.log('singleTap');
+        }).swipelist();
       });
   {% endhighlight %}
+
+  <p  class="component-description">通过swipelist方法返回一个或多个滑动列表对象的数组（根据选择器选到的dom对象个数）</p>
+    
+  {% highlight js %}
+      var sp = $('.ui-swipeout').swipelist(); //单个 
+      var sps = $('.ui-swipeout').swipelist(); //数组
+  {% endhighlight %}
+
   <p class="component-description">样式说明</p>
   <ul>
     <li>
@@ -303,47 +325,65 @@
   <table>
     <tr>
       <th>事件</th>
+      <th>参数</th>
       <th>说明</th>
     </tr>
     <tr>
-      <td>pageLoadStart</td>
-      <td>发送Ajax之前触发</td>
+      <td>open</td>
+      <td><code>event, swip</code>，其中<code>swip</code> 是当前操作的滑块对象，可通过该对象调用滑动列表的方法</td>
+      <td>滑块被打开时触发</td>
     </tr>
     <tr>
-      <td>pageLoadCancel</td>
-      <td>取消了正在发送的ajax请求</td>
+      <td>opened</td>
+      <td><code>event, swip</code>，其中<code>swip</code> 是当前操作的滑块对象，可通过该对象调用滑动列表的方法</td>
+      <td>滑块被打开后触发</td>
     </tr>
     <tr>
-      <td>pageLoadError</td>
-      <td>Ajax 请求失败</td>
+      <td>delete</td>
+      <td><code>event, swip</code>，其中<code>swip</code> 是当前操作的滑块对象，可通过该对象调用滑动列表的方法</td>
+      <td>点击加有删除样式的按钮时触发，回调函数返回true直接删除，返回false则不执行删除，可做其他操作后通过回调函数返回的swip对象进行删除操作</td>
     </tr>
     <tr>
-      <td>pageLoadComplete</td>
-      <td>Ajax 请求结束，无论是成功还是失败</td>
+      <td>deleted</td>
+      <td><code>event, swip</code>，其中<code>swip</code> 是当前操作的滑块对象，可通过该对象调用滑动列表的方法</td>
+      <td>删除成功后出发</td>
     </tr>
     <tr>
-      <td>pageAnimationStart</td>
-      <td>新页面的DOM插入当前页面之后，动画执行之前</td>
+      <td>close</td>
+      <td><code>event, swip</code>，其中<code>swip</code> 是当前操作的滑块对象，可通过该对象调用滑动列表的方法</td>
+      <td>关闭滑块时触发</td>
     </tr>
     <tr>
-      <td>pageAnimationEnd</td>
-      <td>新页面动画执行完毕</td>
+      <td>closed</td>
+      <td><code>event, swip</code>，其中<code>swip</code> 是当前操作的滑块对象，可通过该对象调用滑动列表的方法</td>
+      <td>关闭滑块后出发</td>
     </tr>
     <tr>
-      <td>beforePageRemove</td>
-      <td>加载新的页面，动画切换完成后，移除旧的 document 前发送，事件回调函数参数是<code>event, $pageContainer</code>，其中<code>$pageContainer</code> 是 <code>.page-group</code>（注：在 window 上触发，且内联 page 的切换不会触发此事件）</td>
+      <td>tapped</td>
+      <td><code>event, swip</code>，其中<code>swip</code> 是当前操作的滑块对象，可通过该对象调用滑动列表的方法</td>
+      <td>列表项被点击时触发</td>
     </tr>
-      <tr>
-          <td>pageRemoved</td>
-          <td>加载新的页面，动画切换完成后，移除旧的 document 后发送（注：在 window 上触发，且内联 page 的切换不会触发此事件）</td>
-      </tr>
-      <tr>
-          <td>beforePageSwitch</td>
-          <td>page 切换前触发，该事件在 pageAnimationStart 前，beforePageSwitch 之后会做一些额外的处理才触发 pageAnimationStart</td>
-      </tr>
+  </table>
+
+
+  <h3 class="component-title">方法</h3>
+  <p class="component-description">在操作过程中可以通过以下方法来控制滑动删除的操作。</p>
+
+  <table>
     <tr>
-      <td>pageInit</td>
-      <td>新页面中的组件初始化完毕</td>
+      <th>方法</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>close</td>
+      <td><code>callback</code><code>操作成功回调函数</code></td>
+      <td>关闭滑块</td>
+    </tr>
+    <tr>
+      <td>delete</td>
+     <td><code>callback</code><code>操作成功回调函数</code></td>
+      <td>删除当前行</td>
     </tr>
   </table>
 </article>

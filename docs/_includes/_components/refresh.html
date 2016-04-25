@@ -1,0 +1,240 @@
+<article class="component" id="refresh" data-url='refresh'>
+  <h3 class="component-title">列表刷新（Refresh）</h3>
+  {% highlight html %}
+  <div class="ui-list-block ui-media-list">任意列表组件外层</div>
+  {% endhighlight %}
+  <h3 class="component-title">JS 部分</h3>
+  {% highlight js %}
+domReady(function(require) {
+    $('.ui-list-block').append('<ul></ul>').on('pullup', function(e, refresh) {
+        pullupRefresh(refresh)
+    }).on('pulldown', function(e, refresh) {
+        pulldownRefresh(refresh)
+    }).refresh().pullupLoading()
+});
+/**
+ * 下拉加载具体业务实现
+ */
+function pulldownRefresh(refresh) {
+    var self = refresh;
+    setTimeout(function() {
+        var ul = $('.ui-list-block ul');
+        var len = ul.children().length
+        for (var i = 1; i < 5; i++) {
+            ul.prepend('<li><div class="ui-list-item-link ui-list-item-content">' +
+                '<div class="ui-item-media"><img src="img/dmbj.jpg" width="80"/></div>' +
+                '<div class="ui-list-item-inner">' +
+                '<div class="ui-list-item-title-row">' +
+                '<div class="ui-list-item-title">盗墓笔记 NO.' + (len + i) + '</div>' +
+                '<div class="ui-list-item-after">￥150</div>' +
+                '</div>' +
+                '<div class="ui-media-item-subtitle">南派三叔</div>' +
+                '<div class="ui-media-item-text">出身“老九门”世家的吴邪，因身为考古学家的父母在某次保护国家文物行动时被国外盗墓团伙杀害，吴家为保护吴邪安全将他送去德国读书，因而吴邪对“考古”事业有着与生俱来的兴趣，在一次护宝过程中他偶然获得一张记载着古墓秘密的战国帛书，为赶在不明势力之前解开帛书秘密，保护古墓中文物不受侵害，按照帛书的指引吴邪跟随三叔吴三省、潘子以及神秘小哥张起灵来到鲁殇王墓探究七星鲁王宫的秘密。 在古墓中，吴邪结识了前来探秘的王胖子并救下身份不明的阿宁，经过一系列惊险刺激匪夷所思的事件之后，众人又发现了更多未解的谜团。吴邪等人在和不明势力斗智斗勇的同时又踏上了新的探秘之旅。</div>' +
+                '</div></div></li>');
+        }
+        self.endPulldownToRefresh(); //refresh completed
+    }, 1500);
+}
+var count = 0;
+/**
+ * 上拉加载具体业务实现
+ */
+function pullupRefresh(refresh) {
+    var self = refresh;
+    setTimeout(function() {
+        var ul = $('.ui-list-block ul');
+        var len = ul.children().length
+        for (var i = 1; i < 15; i++) {
+            ul.prepend('<li><div class="ui-list-item-link ui-list-item-content">' +
+                '<div class="ui-item-media"><img src="img/dmbj.jpg" width="80"/></div>' +
+                '<div class="ui-list-item-inner">' +
+                '<div class="ui-list-item-title-row">' +
+                '<div class="ui-list-item-title">盗墓笔记 NO.' + (len + i) + '</div>' +
+                '<div class="ui-list-item-after">￥150</div>' +
+                '</div>' +
+                '<div class="ui-media-item-subtitle">南派三叔</div>' +
+                '<div class="ui-media-item-text">出身“老九门”世家的吴邪，因身为考古学家的父母在某次保护国家文物行动时被国外盗墓团伙杀害，吴家为保护吴邪安全将他送去德国读书，因而吴邪对“考古”事业有着与生俱来的兴趣，在一次护宝过程中他偶然获得一张记载着古墓秘密的战国帛书，为赶在不明势力之前解开帛书秘密，保护古墓中文物不受侵害，按照帛书的指引吴邪跟随三叔吴三省、潘子以及神秘小哥张起灵来到鲁殇王墓探究七星鲁王宫的秘密。 在古墓中，吴邪结识了前来探秘的王胖子并救下身份不明的阿宁，经过一系列惊险刺激匪夷所思的事件之后，众人又发现了更多未解的谜团。吴邪等人在和不明势力斗智斗勇的同时又踏上了新的探秘之旅。</div>' +
+                '</div></div></li>');
+        }
+        self.endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+    }, 1500);
+}
+  {% endhighlight %}
+
+<p  class="component-description">通过refresh方法返回一个或多个列表刷新对象的数组（根据选择器选到的dom对象个数）</p>
+    
+  {% highlight js %}
+      var rf = $('.ui-list-block').refresh(); //单个 
+      var rfs = $('.ui-list-block').refresh(); //数组
+  {% endhighlight %}
+
+  <h3 class="component-title">属性</h3>
+
+  <table>
+    <tr>
+      <th>属性</th>
+      <th>取值范围</th>
+      <th>默认值</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>down</td>
+      <td>
+        <code>JSON</code>
+      </td>
+      <td>
+        {% highlight html %}
+          down:{
+            height: 50,
+            contentdown:'下拉可以刷新',
+            contentover:'释放立即刷新',
+            contentrefresh:'正在刷新...'
+          }
+        {% endhighlight %}
+      </td>
+      <td>下拉配置项</td>
+    </tr>
+    <tr>
+      <td>up</td>
+      <td>
+        <code>JSON</code>
+      </td>
+      <td>
+        {% highlight html %}
+          up:{
+            height:40,
+            contentdown:'上拉显示更多',
+            contentover:'释放立即刷新',
+            contentrefresh:'正在加载...',
+            contentnomore:'没有更多数据了'
+          }
+        {% endhighlight %}
+      </td>
+      <td>上拉配置项</td>
+    </tr>
+    <tr>
+      <td>enablePulldown</td>
+      <td>
+        <code>true</code>
+        /
+        <code>false</code>
+      </td>
+      <td>
+        <code>true</code>
+      </td>
+      <td>是否可以下拉</td>
+    </tr>
+    <tr>
+      <td>enablePullup</td>
+      <td>
+        <code>true</code>
+        /
+        <code>false</code>
+      </td>
+      <td>
+        <code>true</code>
+      </td>
+      <td>是否可以上拉</td>
+    </tr>
+  </table>
+
+  <h3 class="component-title">事件</h3>
+  <p class="component-description">在操作过程中可以通过以下事件来控制列表刷新的操作。</p>
+
+  <table>
+    <tr>
+      <th>事件</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>pulldown</td>
+      <td>
+        <code>event, refresh</code>
+        ，其中
+        <code>refresh</code>
+        是当前操作的列表刷新对象，可通过该对象调用列表刷新的方法
+      </td>
+      <td>执行下拉刷新时触发</td>
+    </tr>
+    <tr>
+      <td>pullup</td>
+      <td>
+        <code>event, refresh</code>
+        ，其中
+        <code>refresh</code>
+        是当前操作的列表刷新对象，可通过该对象调用列表刷新的方法
+      </td>
+      <td>执行上拉加载时触发</td>
+    </tr>
+  </table>
+
+  <h3 class="component-title">方法</h3>
+  <p class="component-description">在操作过程中可以通过以下方法来控制列表刷新的操作。</p>
+
+  <table>
+    <tr>
+      <th>方法</th>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>pulldownLoading</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>执行下拉刷新</td>
+    </tr>
+    <tr>
+      <td>pullupLoading</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>执行上拉加载</td>
+    </tr>
+    <tr>
+      <td>endPulldownToRefresh</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>结束下拉刷新</td>
+    </tr>
+    <tr>
+      <td>endPullupToRefresh</td>
+      <td>
+        <code>boolean</code>类型，
+        <code>可选</code>，为true时标志无更多数据
+      </td>
+      <td>结束上拉加载</td>
+    </tr>
+    <tr>
+      <td>disablePulldown</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>禁止下拉刷新</td>
+    </tr>
+    <tr>
+      <td>disablePullup</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>禁止上拉加载</td>
+    </tr>
+    <tr>
+      <td>enablePulldown</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>启用下拉刷新</td>
+    </tr>
+    <tr>
+      <td>enablePullup</td>
+      <td>
+        <code>无</code>
+      </td>
+      <td>启用上拉加载</td>
+    </tr>
+  </table>
+
+</article>
