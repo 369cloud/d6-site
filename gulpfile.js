@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	paths = {
 		site: {
 			root: '_site/',
-			index: 'index.html'
+			index: 'D6/index.html'
 		}
 	};
 gulp.task('jekyll', function(cb) {

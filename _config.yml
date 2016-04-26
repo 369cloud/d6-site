@@ -16,6 +16,7 @@ permalink:    pretty
 # Build settings
 markdown: kramdown
 
+baseurl: /D6
 
 # Server
 source:       docs
